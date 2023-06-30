@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tanglink | Encurtador de URL</title>
     <link rel="stylesheet" href="style.css">
-    <script defer src="main"></script>
+    <script defer src="main.js"></script>
 </head>
 <body>
     <div class="content1">
         <h1 class="inputTitle">Encurte seus links!</h1>
-        <input class="input" id="longURLInput" type="url" placeholder=" URL para ser encurtada">
+        <input class="input" id="longURLInput" type="url" placeholder=" URL para ser encurtada" onchange="longURLInputChange()">
         <input class="input" id="shortURLInput" type="text">
         <br>
         <button id="tangButton">Tang it!</button>
