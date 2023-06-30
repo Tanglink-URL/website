@@ -1,9 +1,9 @@
 let randCharSet = "ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz123456789"
 
 let shortURLInput = document.getElementById("shortURLInput")
+let longURLInput = document.getElementById("longURLInput")
 let tangButton = document.getElementById("tangButton")
 let finalURL = document.getElementById("finalURL")
-
 
 
 
@@ -19,6 +19,17 @@ function longURLInputChange(){
 
 function shortURLInputChange(){
     finalURL.innerText = "tanglink.onrender.com/" + shortURLInput.value
+}
+
+
+function tangLink(){
+
+    let fetchURL = 'https://tanglink.onrender.com/create?shortURL=' + shortURLInput.value + "&longURL=" + longURLInput
+
+    fetch(fetchURL, {
+        method: 'POST'
+    })
+    .then((response) => console.log(response))
 }
 
 
