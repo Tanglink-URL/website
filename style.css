@@ -27,6 +27,12 @@
 #shortURLInput{
     display: none;
 }
+#finalURL{
+    display: none;
+    font-family: arial;
+    margin-left: 25vw;
+    margin-top: 2.25vh;
+}
 #tangButton{
     display: none;
     margin-left: 25vw;
