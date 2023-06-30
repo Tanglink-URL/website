@@ -1,4 +1,4 @@
-body{
+*{
     margin: 0px;
     padding: 0px;
 }
@@ -6,4 +6,21 @@ body{
     width: 100vw;
     height: 50vh;
     background-color: #ffa530;
+    position: relative;
+    overflow: hidden;
+}
+.inputTitle{
+    position: relative;
+    font-family: Arial;
+    margin-left: 25vw;
+    margin-top: 20vh;
+}
+.input{
+    margin-left: 25vw;
+    margin-top: 2vh;
+    width: 17rem;
+    height: 1.25rem;
+    border-radius: 0.3rem;  
+    border: 0px;
+    box-shadow: 2px 5px 5px rgb(0, 0, 0, 0.25);
 }
