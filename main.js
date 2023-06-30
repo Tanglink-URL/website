@@ -24,7 +24,7 @@ function shortURLInputChange(){
 
 function tangLink(){
 
-    let fetchURL = 'https://tanglink.onrender.com/create?shortURL=' + shortURLInput.value + "&longURL=" + longURLInput
+    let fetchURL = 'https://tanglink.onrender.com/create?shortURL=' + shortURLInput.value + "&longURL=" + longURLInput.value
 
     fetch(fetchURL, {
         method: 'POST'
