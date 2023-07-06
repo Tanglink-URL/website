@@ -46,3 +46,25 @@
     transition: .1s;
     cursor: pointer;
 }
+#response{
+    margin-left: 25vw;
+    margin-top: 2vh;
+    font-family: arial;
+}
+.content1{
+    display: flex;
+}
+.contentLeft{
+    width: 60vw;
+}
+.contentRight{
+    width: 40vw;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    align-content: center;
+}
+.logoIMG{
+    width: 20vw;
+    height: 20vw;
+}
