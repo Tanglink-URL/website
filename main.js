@@ -5,35 +5,54 @@ let longURLInput = document.getElementById("longURLInput")
 let tangButton = document.getElementById("tangButton")
 let finalURL = document.getElementById("finalURL")
 
-
+let changeNameLater = true
 
 function longURLInputChange(){
 
-    shortURLInput.style.display = "block"
-    tangButton.style.display = "block"
-    finalURL.style.display = "block"
+    if(changeNameLater){
+        shortURLInput.style.display = "block"
+        tangButton.style.display = "block"
+        finalURL.style.display = "block"
 
-    shortURLInput.value = randString(5, randCharSet)
-    finalURL.innerText = "tanglink.onrender.com/" + shortURLInput.value
+        shortURLInput.value = randString(5, randCharSet)
+        finalURL.innerText = "tanglink.onrender.com/" + shortURLInput.value
+    }
 }
 
 function shortURLInputChange(){
-    finalURL.innerText = "tanglink.onrender.com/" + shortURLInput.value
+    if(changeNameLater){
+        finalURL.innerText = "tanglink.onrender.com/" + shortURLInput.value
+    }
 }
 
 
 function tangLink(){
 
-    let fetchURL = 'https://tanglink.onrender.com/create?shortURL=' + shortURLInput.value + "&longURL=" + longURLInput.value
+    if(changeNameLater){
+        let fetchURL = 'https://tanglink.onrender.com/create?shortURL=' + shortURLInput.value + "&longURL=" + longURLInput.value
 
     fetch(fetchURL, {
         method: 'POST'
     })
-    .then((response) => console.log(response))
+    .then((response) => apiResponse(response))
+    }
 }
 
 
+function apiResponse(response){
+    console.log(response)
+    if(response.status == 201){
+        document.getElementById('response').innerText = 'Link tangled with sucess!'
+        changeNameLater = false
 
+        document.getElementById('finalURL').addEventListener('click', (e) => {
+            //FIX THIS LATER
+            //window.location.href = 'https://' + document.getElementById('finalURL').value
+        })
+    }else{
+        document.getElementById('response').innerText = 'Link failed to be tangled, please try again!'
+    }
+}
 
 
 function randString(length, set) {
